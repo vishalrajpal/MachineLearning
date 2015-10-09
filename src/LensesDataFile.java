@@ -1,8 +1,12 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -117,21 +121,27 @@ public class LensesDataFile implements DataFile
 
    public void writeToFile() throws Exception {
       File file = new File("lenses."+dataType);
-      file.delete();
-      FileOutputStream os = new FileOutputStream(file);
-      for(Instance i : this.instances) {
-         if(this.dataType.equals("testing") && toPredict) {
-            os.write((i.getInstanceId()+",").getBytes());
-         }
-         os.write(i.toString().getBytes());
-         if(this.dataType.equals("testing") && toPredict) {
-            os.write(",".getBytes());
-            os.write(i.getPredictionLabel().getBytes());
-         }
-         os.write(System.lineSeparator().getBytes());
+      BufferedWriter br;;
+      if(toPredict) {
+         br = new BufferedWriter(new PrintWriter(System.out));
+      } else {
+         file.delete();
+         br = new BufferedWriter(new PrintWriter(file));
       }
-      os.flush();
-      os.close();
+      
+      for(Instance i : this.instances) {
+         if(toPredict) {
+            br.write(i.getInstanceId()+",");
+         }
+         br.write(i.toString());
+         if(toPredict) {
+            br.write(",");
+            br.write(i.getPredictionLabel());
+         }
+         br.write(System.lineSeparator());
+      }
+      br.flush();
+      br.close();
    }
    
    

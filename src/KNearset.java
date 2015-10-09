@@ -22,7 +22,7 @@ public class KNearset
          testingDataFile = DataFiles.createDataFile("CA", testingFile, "testing", true);
       }
       testingDataFile.calculateKNearestDistanceWith(trainingDataFile, k);
-      System.out.println(DataFiles.getAccuracy(testingDataFile.getInstances()));
+      //System.out.println(DataFiles.getAccuracy(testingDataFile.getInstances()));
       testingDataFile.writeToFile();
    }
 }

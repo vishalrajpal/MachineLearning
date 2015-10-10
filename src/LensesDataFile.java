@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,7 +73,7 @@ public class LensesDataFile implements DataFile
    @Override
    public void calculateKNearestDistance(Instance newInstance, int k)
    {
-      Map<Instance, Double> map = new HashMap<Instance, Double>();
+      Map<Instance, Double> map = new LinkedHashMap<Instance, Double>();
       for(Instance i : this.instances) {
          map.put(i,i.getL2Distance(newInstance));
       }

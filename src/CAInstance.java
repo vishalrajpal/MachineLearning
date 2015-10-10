@@ -277,14 +277,14 @@ public class CAInstance implements Instance
    private double calculateCategoricalDistance(CAInstance i) {
       double result = 0;
       result = i.getA1Val().getValue().equals(this.getA1Val().getValue()) ? 0 : 1;
-      result = i.getA4Val().getValue().equals(this.getA4Val().getValue()) ? 0 : 1;
-      result = i.getA5Val().getValue().equals(this.getA5Val().getValue()) ? 0 : 1;
-      result = i.getA6Val().getValue().equals(this.getA6Val().getValue()) ? 0 : 1;
-      result = i.getA7Val().getValue().equals(this.getA7Val().getValue()) ? 0 : 1;
-      result = i.getA9Val().getValue().equals(this.getA9Val().getValue()) ? 0 : 1;
-      result = i.getA10Val().getValue().equals(this.getA10Val().getValue()) ? 0 : 1;
-      result = i.getA12Val().getValue().equals(this.getA12Val().getValue()) ? 0 : 1;
-      result = i.getA13Val().getValue().equals(this.getA13Val().getValue()) ? 0 : 1;
+      result += i.getA4Val().getValue().equals(this.getA4Val().getValue()) ? 0 : 1;
+      result += i.getA5Val().getValue().equals(this.getA5Val().getValue()) ? 0 : 1;
+      result += i.getA6Val().getValue().equals(this.getA6Val().getValue()) ? 0 : 1;
+      result += i.getA7Val().getValue().equals(this.getA7Val().getValue()) ? 0 : 1;
+      result += i.getA9Val().getValue().equals(this.getA9Val().getValue()) ? 0 : 1;
+      result += i.getA10Val().getValue().equals(this.getA10Val().getValue()) ? 0 : 1;
+      result += i.getA12Val().getValue().equals(this.getA12Val().getValue()) ? 0 : 1;
+      result += i.getA13Val().getValue().equals(this.getA13Val().getValue()) ? 0 : 1;
       return result;
    }
    

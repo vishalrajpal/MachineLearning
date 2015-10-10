@@ -1,5 +1,3 @@
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 
 public class CAInstance implements Instance
 {
@@ -30,7 +28,6 @@ public class CAInstance implements Instance
    private Attribute<Double> a15Val; 
    private Attribute<Character> a16Val;
    private String predictionLabel;
-   private NumberFormat formatter = new DecimalFormat("#0.00");
    private int instanceId;
    public CAInstance(String[] data, int instanceId) {
       if(data.length != 16) {
@@ -294,12 +291,12 @@ public class CAInstance implements Instance
    @Override
    public String toString()
    {
-      return a1Val.getValue() + "," + formatter.format(a2Val.getValue()) + "," + 
-            formatter.format(a3Val.getValue()) + "," + a4Val.getValue() + "," + a5Val.getValue() + "," + 
-            a6Val.getValue() + "," + a7Val.getValue() + "," + formatter.format(a8Val.getValue()) + "," + 
-            a9Val.getValue() + "," + a10Val.getValue() + "," + formatter.format(a11Val.getValue()) + "," + 
-            a12Val.getValue() + "," + a13Val.getValue() + "," + formatter.format(a14Val.getValue()) + "," + 
-            formatter.format(a15Val.getValue()) + "," + a16Val.getValue();
+      return a1Val.getValue() + "," + a2Val.getValue() + "," + 
+            a3Val.getValue() + "," + a4Val.getValue() + "," + a5Val.getValue() + "," + 
+            a6Val.getValue() + "," + a7Val.getValue() + "," + a8Val.getValue() + "," + 
+            a9Val.getValue() + "," + a10Val.getValue() + "," + a11Val.getValue() + "," + 
+            a12Val.getValue() + "," + a13Val.getValue() + "," + a14Val.getValue() + "," + 
+            a15Val.getValue() + "," + a16Val.getValue();
    }
 
    public Attribute<A1> getA1Val()

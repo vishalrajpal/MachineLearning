@@ -13,12 +13,12 @@ public class ValueComparator implements Comparator<Instance>
    @Override
    public int compare(Instance o1, Instance o2)
    {
-      if(map.get(o1)<map.get(o2)) {
+      if(map.get(o1)<=map.get(o2)) {
          return -1;
-      } else if (map.get(o1)>map.get(o2)){
+      } else {//if (map.get(o1)>map.get(o2)){
          return 1;
       }
-      return 0;
+      //return 0;
    }
 
    

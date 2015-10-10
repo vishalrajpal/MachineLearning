@@ -2,7 +2,6 @@ import java.io.File;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.List;
-import java.util.Map;
 
 
 public abstract class DataFiles
@@ -27,7 +26,6 @@ public abstract class DataFiles
       
       double total = 0;
       double counter = 0;
-      Instance currentValue;
       for(Instance instance : instances) {
          total++;
          if(instance.getPredictionLabel().equals(instance.getLabel())) {
